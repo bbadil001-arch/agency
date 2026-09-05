@@ -26,15 +26,13 @@ export function Hero() {
           </span>
           <motion.h1
             className="font-heading text-[clamp(4.75rem,16vw,13.75rem)] font-normal leading-[1.02] tracking-[-0.024em]"
-            aria-label="Design that moves"
+            aria-label="Digital Experiences That Scale"
           >
-            Design that <span className="bg-[linear-gradient(to_left,#6366f1,#a855f7,#fcd34d)] bg-clip-text text-transparent">moves.</span>
+            Digital Experiences That <span className="bg-[linear-gradient(to_left,#6366f1,#a855f7,#fcd34d)] bg-clip-text text-transparent">Scale.</span>
           </motion.h1>
 
           <p className="mt-[9px] max-w-md text-lg leading-8 text-[hsl(var(--hero-sub-text))] opacity-80">
-            Graphic design, web development, and digital growth
-            <br />
-            for brands ready to be seen.
+            High-converting web development, brand design, and performance marketing for ambitious businesses.
           </p>
 
           <motion.a
@@ -44,7 +42,7 @@ export function Hero() {
             whileTap={{ scale: 0.98 }}
             className="mt-[25px] rounded-full bg-white px-[29px] py-[24px] font-medium text-[#0b0610] shadow-[0_14px_40px_rgba(255,255,255,0.12)] transition hover:bg-white/90"
           >
-            Start a project
+            Scale Your Brand
           </motion.a>
         </motion.div>
       </section>
