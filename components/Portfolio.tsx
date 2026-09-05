@@ -13,64 +13,71 @@ type Project = {
   tags: string[];
   monogram: string;
   description: string;
-  gradient: string;
+  image: string;
+  link: string;
 };
 
 const filters: Category[] = ['All', 'Marketing', 'Design', 'Development'];
 const projects: Project[] = [
   {
-    title: 'Atlas House',
-    client: 'Moroccan hospitality',
-    category: 'Design',
-    tags: ['Identity', 'Art direction'],
-    monogram: 'AH',
-    description: 'A warmer visual language for a new generation of stays in the Atlas region.',
-    gradient: 'linear-gradient(135deg, #3b1d54 0%, #c084fc 100%)',
-  },
-  {
-    title: 'Noura Beauty',
-    client: 'Casablanca / Paris',
-    category: 'Marketing',
-    tags: ['Paid social', 'Growth'],
-    monogram: 'NB',
-    description: 'A performance engine that turned product discovery into a daily habit.',
-    gradient: 'linear-gradient(135deg, #241b4b 0%, #f59e0b 100%)',
-  },
-  {
-    title: 'Northline',
-    client: 'International SaaS',
+    title: 'Apply / Job Application UI',
+    client: 'yHD AGENCY · Product design',
     category: 'Development',
-    tags: ['Next.js', 'Web app'],
-    monogram: 'NL',
-    description: 'A faster, clearer platform experience for teams shipping across time zones.',
-    gradient: 'linear-gradient(135deg, #0f3147 0%, #38bdf8 100%)',
+    tags: ['UI / UX', 'Product design'],
+    monogram: 'AP',
+    description: 'A focused application experience designed to make the next step feel effortless.',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/abc552217200329.Y3JvcCw1NzUzLDQ1MDAsODUsMA.jpg',
+    link: 'https://www.behance.net/gallery/217200329/apply-for-the-job-application-ui-design',
   },
   {
-    title: 'Mina Market',
-    client: 'Moroccan commerce',
+    title: 'Food & Restaurant App',
+    client: 'yHD AGENCY · Mobile experience',
     category: 'Development',
-    tags: ['E-commerce', 'SEO'],
-    monogram: 'MM',
-    description: 'A bilingual storefront made for everyday rituals and effortless checkout.',
-    gradient: 'linear-gradient(135deg, #422006 0%, #fb7185 100%)',
+    tags: ['UI / UX', 'Mobile app'],
+    monogram: 'FR',
+    description: 'A warm, intuitive food discovery flow built around appetite, speed, and clarity.',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/1a5866217200001.Y3JvcCw4MDgsNjMyLDAsMA.jpg',
+    link: 'https://www.behance.net/gallery/217200001/food-and-restaurant-app-ui-design',
   },
   {
-    title: 'Lumen Capital',
-    client: 'London / Dubai',
-    category: 'Design',
-    tags: ['Brand system', 'Digital'],
-    monogram: 'LC',
-    description: 'A confident identity system for a fund investing in the next decade of change.',
-    gradient: 'linear-gradient(135deg, #172554 0%, #818cf8 100%)',
+    title: 'Music App UI',
+    client: 'yHD AGENCY · Digital product',
+    category: 'Development',
+    tags: ['Interface', 'Interaction'],
+    monogram: 'MU',
+    description: 'A vivid listening interface that gives discovery and personal taste equal weight.',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/2ee640217199409.Y3JvcCw4MDgsNjMyLDAsMA.jpg',
+    link: 'https://www.behance.net/gallery/217199409/UI-Design-Music-app',
   },
   {
-    title: 'Kasbah Radio',
-    client: 'Independent media',
+    title: 'Obra Marrakech',
+    client: 'Obra Marrakech · Campaign design',
     category: 'Marketing',
-    tags: ['Content', 'Community'],
-    monogram: 'KR',
-    description: 'A sharper editorial rhythm that made local culture impossible to scroll past.',
-    gradient: 'linear-gradient(135deg, #451a03 0%, #facc15 100%)',
+    tags: ['Social content', 'Art direction'],
+    monogram: 'OM',
+    description: 'A tactile campaign system made to bring a Marrakech beauty brand into focus.',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/98d950152573023.Y3JvcCwyNTU2LDIwMDAsMjIxLDA.jpg',
+    link: 'https://www.behance.net/gallery/152573023/Obra-Marrakech-Flayer-And-Instagram-Poste-by-Yhdesign',
+  },
+  {
+    title: 'RC Re Corps',
+    client: 'RC Re Corps · Brand identity',
+    category: 'Design',
+    tags: ['Logo design', 'Identity'],
+    monogram: 'RC',
+    description: 'A confident mark and identity direction for a brand built around renewal and movement.',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/83fb13149843455.Y3JvcCwyNTU2LDIwMDAsMjIxLDA.jpg',
+    link: 'https://www.behance.net/gallery/149843455/Rc-Re-Corps-Logo-design-by-Yhdesign',
+  },
+  {
+    title: 'Obra Kech Beauty & Spa',
+    client: 'Obra Kech · Visual system',
+    category: 'Design',
+    tags: ['Branding', 'Print design'],
+    monogram: 'OK',
+    description: 'An elegant visual world shaped for a beauty and spa experience in Marrakech.',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/ddf881149843039.Y3JvcCwxMDA3LDc4OCw2ODgsNDQ0.jpg',
+    link: 'https://www.behance.net/gallery/149843039/Obra-Kech-Institut-De-Beaute-Spa-Conceptions',
   },
 ];
 
@@ -88,7 +95,7 @@ export function Portfolio() {
           <SectionHeading
             eyebrow="03 / Selected work"
             title="Work with a point of view."
-            description="A few recent launches, repositions, and digital systems built to make the next move obvious."
+            description="A selection of interface, identity, and campaign work from the yHD AGENCY studio."
           />
           <div className="flex flex-wrap gap-2" aria-label="Filter case studies">
             {filters.map((filter) => (
@@ -119,21 +126,29 @@ export function Portfolio() {
               transition={{ delay: index * 0.05, duration: 0.35 }}
               className="group"
             >
-              <div className="liquid-glass overflow-hidden rounded-[28px] p-2">
-                <div className="relative aspect-[1.45] overflow-hidden rounded-[21px]" style={{ backgroundImage: project.gradient }}>
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.32),transparent_30%)]" />
-                  <div className="relative flex h-full flex-col justify-between p-6 transition duration-500 group-hover:scale-105 sm:p-8">
-                    <div className="flex items-start justify-between text-white/70">
-                      <span className="font-heading text-sm tracking-[0.2em]">{project.monogram}</span>
-                      <ArrowUpRight aria-hidden="true" className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="font-heading text-3xl font-medium tracking-[-0.05em] text-white sm:text-4xl">{project.title}</p>
-                      <p className="mt-1 text-sm text-white/65">{project.client}</p>
+              <a href={project.link} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on Behance`}>
+                <div className="liquid-glass overflow-hidden rounded-[28px] p-2 transition duration-300 group-hover:shadow-[0_0_42px_rgba(168,85,247,0.18)]">
+                  <div className="relative aspect-[1.45] overflow-hidden rounded-[21px] bg-gradient-to-br from-purple-950 to-indigo-950">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#08030d]/85 via-transparent to-white/10" />
+                    <div className="relative flex h-full flex-col justify-between p-6 text-white sm:p-8">
+                      <div className="flex items-start justify-between text-white/75">
+                        <span className="font-heading text-sm tracking-[0.2em]">{project.monogram}</span>
+                        <ArrowUpRight aria-hidden="true" className="h-5 w-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </div>
+                      <div>
+                        <p className="font-heading text-3xl font-medium tracking-[-0.05em] sm:text-4xl">{project.title}</p>
+                        <p className="mt-1 text-sm text-white/65">{project.client}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
               <div className="flex items-start justify-between gap-6 px-2 pt-5">
                 <div>
                   <p className="max-w-md text-sm leading-6 text-foreground/55">{project.description}</p>
@@ -141,8 +156,8 @@ export function Portfolio() {
                     {project.tags.map((tag) => <span key={tag} className="text-xs text-foreground/35">{tag}</span>)}
                   </div>
                 </div>
-                <a href="#contact" className="mt-1 shrink-0 text-sm font-medium text-foreground transition hover:text-purple-200">
-                  View case study <span aria-hidden="true">↗</span>
+                <a href={project.link} target="_blank" rel="noreferrer" className="mt-1 shrink-0 text-sm font-medium text-foreground transition hover:text-purple-200">
+                  View on Behance <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </motion.article>

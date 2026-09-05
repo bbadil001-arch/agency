@@ -2,10 +2,10 @@ import { ArrowUpRight, Building2, CheckCircle2, Globe2, Sparkles } from 'lucide-
 import { SectionHeading } from '@/components/section-heading';
 
 const metrics = [
-  { value: '50+', label: 'Projects delivered', icon: CheckCircle2 },
-  { value: '98%', label: 'Client satisfaction', icon: Sparkles },
-  { value: '3×', label: 'Average ROI', icon: ArrowUpRight },
-  { value: 'Casa', label: 'Based in Casablanca', icon: Building2 },
+  { value: '7+', label: 'Years in digital craft', icon: CheckCircle2 },
+  { value: '5+', label: 'Years in graphic design', icon: Sparkles },
+  { value: '3+', label: 'Years in web development', icon: ArrowUpRight },
+  { value: 'MA', label: 'Morocco-based studio', icon: Building2 },
 ];
 
 export function About() {
@@ -17,10 +17,10 @@ export function About() {
           <SectionHeading eyebrow="02 / The studio" title="Local instinct. Global standard." />
           <div className="mt-8 space-y-5 text-base leading-8 text-foreground/60 sm:text-lg">
             <p>
-              Power AI is a Casablanca-based digital studio for brands ready to move with intent. We bring strategic clarity, expressive design, and dependable engineering into the same room.
+              yHD AGENCY is a Morocco-based creative studio for brands ready to move with intent. We bring strategic clarity, expressive design, and dependable engineering into the same room.
             </p>
             <p>
-              Our roots keep us close to the nuance of Morocco’s markets — its languages, ambition, and pace — while our process is built for the standards of the world’s most competitive digital teams.
+              Our roots keep us close to Morocco’s visual culture and entrepreneurial energy, while our process is built for the standards of the world’s most competitive digital teams.
             </p>
           </div>
           <a href="#contact" className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">

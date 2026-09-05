@@ -2,7 +2,7 @@ export function BrandLogo() {
   return (
     <a
       href="#top"
-      aria-label="Power AI home"
+      aria-label="yHD AGENCY home"
       className="flex items-center gap-2.5 text-sm font-semibold tracking-[-0.02em] text-foreground"
     >
       <span
@@ -23,7 +23,7 @@ export function BrandLogo() {
           </defs>
         </svg>
       </span>
-      <span>Power AI</span>
+      <span className="tracking-[0.04em]">yHD AGENCY</span>
     </a>
   );
 }

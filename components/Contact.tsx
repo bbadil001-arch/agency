@@ -10,7 +10,7 @@ export function Contact() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`New Power AI project inquiry from ${data.get('name')}`);
+    const subject = encodeURIComponent(`New yHD AGENCY project inquiry from ${data.get('name')}`);
     const body = encodeURIComponent([
       `Name: ${data.get('name')}`,
       `Email: ${data.get('email')}`,
@@ -20,7 +20,7 @@ export function Contact() {
       String(data.get('message') ?? ''),
     ].join('\n'));
     setSubmitted(true);
-    window.location.href = `mailto:hello@powerai.example?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:yh.help@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -35,19 +35,19 @@ export function Contact() {
           />
 
           <div className="mt-10 space-y-5 text-sm text-foreground/60">
-            <a href="mailto:hello@powerai.example" className="flex items-center gap-3 transition hover:text-foreground">
-              <Mail aria-hidden="true" className="h-4 w-4 text-foreground/40" /> hello@powerai.example
+            <a href="mailto:yh.help@gmail.com" className="flex items-center gap-3 transition hover:text-foreground">
+              <Mail aria-hidden="true" className="h-4 w-4 text-foreground/40" /> yh.help@gmail.com
             </a>
-            <a href="tel:+212522000000" className="flex items-center gap-3 transition hover:text-foreground">
-              <Phone aria-hidden="true" className="h-4 w-4 text-foreground/40" /> +212 5 22 00 00 00
+            <a href="tel:+212643543460" className="flex items-center gap-3 transition hover:text-foreground">
+              <Phone aria-hidden="true" className="h-4 w-4 text-foreground/40" /> +212 643 543 460
             </a>
             <span className="flex items-center gap-3">
-              <MapPin aria-hidden="true" className="h-4 w-4 text-foreground/40" /> Casablanca, Morocco
+              <MapPin aria-hidden="true" className="h-4 w-4 text-foreground/40" /> Morocco · Available worldwide
             </span>
           </div>
 
           <a
-            href="https://wa.me/212522000000"
+            href="https://wa.me/212643543460"
             target="_blank"
             rel="noreferrer"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"

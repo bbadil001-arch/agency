@@ -21,17 +21,20 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 flex flex-col items-center"
         >
+          <span className="mb-6 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.28em] text-foreground/55 shadow-[0_0_30px_rgba(168,85,247,0.12)]">
+            yHD AGENCY · Morocco
+          </span>
           <motion.h1
             className="font-heading text-[clamp(4.75rem,16vw,13.75rem)] font-normal leading-[1.02] tracking-[-0.024em]"
-            aria-label="Power AI"
+            aria-label="Design that moves"
           >
-            Power <span className="bg-[linear-gradient(to_left,#6366f1,#a855f7,#fcd34d)] bg-clip-text text-transparent">AI</span>
+            Design that <span className="bg-[linear-gradient(to_left,#6366f1,#a855f7,#fcd34d)] bg-clip-text text-transparent">moves.</span>
           </motion.h1>
 
           <p className="mt-[9px] max-w-md text-lg leading-8 text-[hsl(var(--hero-sub-text))] opacity-80">
-            The most powerful AI ever deployed
+            Graphic design, web development, and digital growth
             <br />
-            in talent acquisition
+            for brands ready to be seen.
           </p>
 
           <motion.a
@@ -41,7 +44,7 @@ export function Hero() {
             whileTap={{ scale: 0.98 }}
             className="mt-[25px] rounded-full bg-white px-[29px] py-[24px] font-medium text-[#0b0610] shadow-[0_14px_40px_rgba(255,255,255,0.12)] transition hover:bg-white/90"
           >
-            Schedule a Consult
+            Start a project
           </motion.a>
         </motion.div>
       </section>

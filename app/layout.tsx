@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Power AI | Talent acquisition, amplified',
-  description: 'The most powerful AI ever deployed in talent acquisition.',
+  title: 'yHD AGENCY | Digital design & development',
+  description: 'Morocco-based creative studio for graphic design, digital experiences, and web development.',
 };
 
 export default function RootLayout({
