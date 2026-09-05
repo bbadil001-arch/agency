@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { LogoMarquee } from '@/components/logo-marquee';
+import { HeroMarquee } from '@/components/HeroMarquee';
 import { Navbar } from '@/components/navbar';
 import { VideoBackground } from '@/components/video-background';
 
@@ -47,7 +47,7 @@ export function Hero() {
         </motion.div>
       </section>
 
-      <LogoMarquee />
+      <HeroMarquee />
     </section>
   );
 }

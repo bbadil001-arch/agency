@@ -1,12 +1,6 @@
-import { ArrowUpRight, CheckCircle2, Layers, MapPin, Sparkles, TrendingUp } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
-
-const metrics = [
-  { value: '50+', label: 'Digital Projects Delivered', icon: Layers },
-  { value: '98%', label: 'Client Satisfaction Rate', icon: Sparkles },
-  { value: '3x', label: 'Average Revenue Boost', icon: TrendingUp },
-  { value: 'Casablanca', label: 'Morocco-Based Hub', icon: MapPin },
-];
+import { Metrics } from '@/components/Metrics';
 
 export function About() {
   return (
@@ -28,18 +22,7 @@ export function About() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          {metrics.map((metric) => {
-            const Icon = metric.icon;
-            return (
-              <div key={metric.label} className="liquid-glass rounded-[24px] p-5 transition-all duration-300 hover:scale-[1.02] sm:p-7">
-                <Icon aria-hidden="true" className="h-5 w-5 text-foreground/40" strokeWidth={1.7} />
-                <p className="mt-9 bg-gradient-to-r from-indigo-400 via-purple-400 to-amber-300 bg-clip-text font-heading text-3xl font-semibold tracking-[-0.05em] text-transparent md:text-4xl">{metric.value}</p>
-                <p className="mt-2 text-sm font-medium text-foreground/70">{metric.label}</p>
-              </div>
-            );
-          })}
-        </div>
+        <Metrics />
       </div>
     </section>
   );

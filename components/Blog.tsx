@@ -3,7 +3,9 @@ import { ArrowUpRight, BookOpen } from 'lucide-react';
 import { blogPosts } from '@/lib/blog-posts';
 import { SectionHeading } from '@/components/section-heading';
 
-export function Blog() {
+export function Blog({ limit }: { limit?: number }) {
+  const posts = limit ? blogPosts.slice(-limit) : blogPosts;
+
   return (
     <section id="insights" className="relative border-y border-white/[0.06] px-5 py-24 sm:px-8 sm:py-32">
       <div className="pointer-events-none absolute right-0 top-1/3 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
@@ -20,7 +22,7 @@ export function Blog() {
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <article key={post.slug} className="group liquid-glass flex h-full flex-col rounded-[26px] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_42px_rgba(168,85,247,0.16)] sm:p-7">
               <div className="flex items-center justify-between text-foreground/45">
                 <span className="flex items-center gap-2 text-xs uppercase tracking-[0.16em]"><BookOpen aria-hidden="true" className="h-4 w-4" /> 0{index + 1}</span>

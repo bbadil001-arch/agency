@@ -15,7 +15,7 @@ export default function Home() {
       <About />
       <Portfolio />
       <Testimonials />
-      <Blog />
+      <Blog limit={3} />
       <Contact />
       <Footer />
     </main>
