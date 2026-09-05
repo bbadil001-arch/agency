@@ -1,11 +1,10 @@
-import { ChevronDown } from 'lucide-react';
 import { BrandLogo } from '@/components/brand-logo';
 
 const navItems = [
-  { label: 'Features', hasChevron: true },
-  { label: 'Solutions', hasChevron: false },
-  { label: 'Plans', hasChevron: false },
-  { label: 'Learning', hasChevron: true },
+  { label: 'Expertise', href: '#services' },
+  { label: 'About', href: '#about' },
+  { label: 'Work', href: '#work' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export function Navbar() {
@@ -18,17 +17,16 @@ export function Navbar() {
           {navItems.map((item) => (
             <a
               key={item.label}
-              href={`#${item.label.toLowerCase()}`}
-              className="flex items-center gap-1.5 text-sm text-foreground/90 transition hover:text-foreground"
+              href={item.href}
+              className="text-sm text-foreground/90 transition hover:text-foreground"
             >
               {item.label}
-              {item.hasChevron && <ChevronDown aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.8} />}
             </a>
           ))}
         </div>
 
         <a
-          href="#consult"
+          href="#contact"
           className="rounded-full border border-white/15 bg-white px-4 py-2 text-sm font-medium text-[#0b0610] transition hover:bg-white/90"
         >
           Sign Up

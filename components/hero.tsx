@@ -7,7 +7,7 @@ import { VideoBackground } from '@/components/video-background';
 
 export function Hero() {
   return (
-    <main id="top" className="relative flex min-h-screen flex-col overflow-hidden bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
+    <section id="top" className="relative flex min-h-screen flex-col overflow-hidden bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
       <VideoBackground />
 
       <Navbar />
@@ -36,7 +36,7 @@ export function Hero() {
 
           <motion.a
             id="consult"
-            href="mailto:hello@powerai.example?subject=Schedule%20a%20Consult"
+            href="#contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="mt-[25px] rounded-full bg-white px-[29px] py-[24px] font-medium text-[#0b0610] shadow-[0_14px_40px_rgba(255,255,255,0.12)] transition hover:bg-white/90"
@@ -47,6 +47,6 @@ export function Hero() {
       </section>
 
       <LogoMarquee />
-    </main>
+    </section>
   );
 }
