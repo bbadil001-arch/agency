@@ -1,11 +1,11 @@
-import { ArrowUpRight, Building2, CheckCircle2, Globe2, Sparkles } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Layers, MapPin, Sparkles, TrendingUp } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 
 const metrics = [
-  { value: '7+', label: 'Years in digital craft', icon: CheckCircle2 },
-  { value: '5+', label: 'Years in graphic design', icon: Sparkles },
-  { value: '3+', label: 'Years in web development', icon: ArrowUpRight },
-  { value: 'MA', label: 'Morocco-based studio', icon: Building2 },
+  { value: '50+', label: 'Digital Projects Delivered', icon: Layers },
+  { value: '98%', label: 'Client Satisfaction Rate', icon: Sparkles },
+  { value: '3x', label: 'Average Revenue Boost', icon: TrendingUp },
+  { value: 'Casablanca', label: 'Morocco-Based Hub', icon: MapPin },
 ];
 
 export function About() {
@@ -32,10 +32,10 @@ export function About() {
           {metrics.map((metric) => {
             const Icon = metric.icon;
             return (
-              <div key={metric.label} className="liquid-glass rounded-[24px] p-5 sm:p-7">
+              <div key={metric.label} className="liquid-glass rounded-[24px] p-5 transition-all duration-300 hover:scale-[1.02] sm:p-7">
                 <Icon aria-hidden="true" className="h-5 w-5 text-foreground/40" strokeWidth={1.7} />
-                <p className="mt-9 font-heading text-3xl tracking-[-0.05em] sm:text-4xl">{metric.value}</p>
-                <p className="mt-2 text-sm leading-5 text-foreground/50">{metric.label}</p>
+                <p className="mt-9 bg-gradient-to-r from-indigo-400 via-purple-400 to-amber-300 bg-clip-text font-heading text-3xl font-semibold tracking-[-0.05em] text-transparent md:text-4xl">{metric.value}</p>
+                <p className="mt-2 text-sm font-medium text-foreground/70">{metric.label}</p>
               </div>
             );
           })}
