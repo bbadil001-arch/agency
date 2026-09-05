@@ -92,6 +92,49 @@ a {
   animation: marquee 20s linear infinite;
 }
 
+.prose-yhd {
+  color: rgb(245 244 242 / 0.64);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+}
+
+.prose-yhd p {
+  margin: 0 0 1.7rem;
+}
+
+.prose-yhd h2,
+.prose-yhd h3 {
+  color: hsl(var(--foreground));
+  font-family: var(--font-general-sans);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.prose-yhd h2 {
+  margin: 3.5rem 0 1.1rem;
+  font-size: clamp(1.8rem, 4vw, 2.55rem);
+}
+
+.prose-yhd h3 {
+  margin: 2.4rem 0 0.9rem;
+  font-size: 1.35rem;
+}
+
+.prose-yhd ul {
+  margin: 0 0 2rem;
+  padding-left: 1.3rem;
+}
+
+.prose-yhd li {
+  margin: 0.6rem 0;
+  padding-left: 0.35rem;
+}
+
+.prose-yhd li::marker {
+  color: rgb(192 132 252 / 0.8);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

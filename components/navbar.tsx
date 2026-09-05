@@ -4,6 +4,7 @@ const navItems = [
   { label: 'Expertise', href: '#services' },
   { label: 'About', href: '#about' },
   { label: 'Work', href: '#work' },
+  { label: 'Insights', href: '#insights' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -29,7 +30,7 @@ export function Navbar() {
           href="#contact"
           className="rounded-full border border-white/15 bg-white px-4 py-2 text-sm font-medium text-[#0b0610] transition hover:bg-white/90"
         >
-          Sign Up
+          Get in Touch
         </a>
       </nav>
 

@@ -1,4 +1,4 @@
-const brands = ['Vortex', 'Nimbus', 'Prysma', 'Cirrus', 'Kynder', 'Halcyn'];
+const brands = ['Shopify', 'WordPress', 'Meta', 'Google Partner', 'HubSpot', 'Webflow'];
 
 function BrandItem({ name }: { name: string }) {
   return (
@@ -15,11 +15,11 @@ export function LogoMarquee() {
   const loop = [...brands, ...brands];
 
   return (
-    <section className="relative z-10 mx-auto flex w-full max-w-5xl items-center gap-8 overflow-hidden px-5 pb-10 sm:gap-12 sm:px-0" aria-label="Trusted by brands">
+    <section className="relative z-10 mx-auto flex w-full max-w-5xl items-center gap-8 overflow-hidden px-5 pb-10 sm:gap-12 sm:px-0" aria-label="Platforms and partners">
       <p className="w-[130px] shrink-0 text-sm leading-5 text-foreground/50 sm:w-[165px]">
-        Relied on by brands
+        Powered by World-Class
         <br />
-        across the globe
+        Tech &amp; Media Platforms
       </p>
 
       <div className="min-w-0 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
