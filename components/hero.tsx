@@ -7,7 +7,7 @@ import { VideoBackground } from '@/components/video-background';
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen flex-col overflow-hidden bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
+    <section id="top" className="relative flex min-h-screen flex-col overflow-visible bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
       <VideoBackground />
 
       <Navbar />

@@ -17,7 +17,7 @@ export function About() {
               Our roots keep us close to Morocco’s visual culture and entrepreneurial energy, while our process is built for the standards of the world’s most competitive digital teams.
             </p>
           </div>
-          <a href="#contact" className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
+          <a href="/contact" className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
             Meet the team <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </a>
         </div>

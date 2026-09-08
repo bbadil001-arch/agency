@@ -9,7 +9,7 @@ import { Testimonials } from '@/components/Testimonials';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
+    <main className="bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
       <Hero />
       <Services />
       <About />
