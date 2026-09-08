@@ -1,12 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 
 type Category = 'All' | 'Marketing' | 'Design' | 'Development';
-type Project = {
+export type Project = {
   title: string;
   client: string;
   category: Exclude<Category, 'All'>;
@@ -18,7 +18,7 @@ type Project = {
 };
 
 const filters: Category[] = ['All', 'Marketing', 'Design', 'Development'];
-const projects: Project[] = [
+const fallbackProjects: Project[] = [
   {
     title: 'Apply / Job Application UI',
     client: 'yHD AGENCY · Product design',
@@ -83,20 +83,53 @@ const projects: Project[] = [
 
 export function Portfolio() {
   const [activeFilter, setActiveFilter] = useState<Category>('All');
+  const [projects, setProjects] = useState<Project[]>(fallbackProjects);
+  const [syncState, setSyncState] = useState<'syncing' | 'synced' | 'fallback'>('syncing');
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch('/api/behance', { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Behance sync failed');
+        const payload: { projects?: Project[] } = await response.json();
+        const remoteProjects = Array.isArray(payload.projects) ? payload.projects : [];
+        if (remoteProjects.length === 0) throw new Error('No Behance projects returned');
+
+        const remoteLinks = new Set(remoteProjects.map((project) => project.link));
+        setProjects([
+          ...remoteProjects,
+          ...fallbackProjects.filter((project) => !remoteLinks.has(project.link)),
+        ]);
+        setSyncState('synced');
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') return;
+        setSyncState('fallback');
+      });
+
+    return () => controller.abort();
+  }, []);
+
   const visibleProjects = useMemo(
     () => (activeFilter === 'All' ? projects : projects.filter((project) => project.category === activeFilter)),
-    [activeFilter],
+    [activeFilter, projects],
   );
 
   return (
     <section id="work" className="px-5 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <SectionHeading
-            eyebrow="03 / Selected work"
-            title="Work with a point of view."
-            description="A selection of interface, identity, and campaign work from the yHD AGENCY studio."
-          />
+          <div>
+            <SectionHeading
+              eyebrow="03 / Selected work"
+              title="Work with a point of view."
+              description="A selection of interface, identity, and campaign work from the yHD AGENCY studio."
+            />
+            <p className="mt-5 text-xs uppercase tracking-[0.16em] text-foreground/35" aria-live="polite">
+              {syncState === 'synced' ? 'Live Behance sync · updated automatically' : syncState === 'syncing' ? 'Checking latest Behance work…' : 'Showing curated work · Behance sync unavailable'}
+            </p>
+          </div>
           <div className="flex flex-wrap gap-2" aria-label="Filter case studies">
             {filters.map((filter) => (
               <button
