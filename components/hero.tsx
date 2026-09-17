@@ -22,7 +22,7 @@ export function Hero() {
           className="relative z-10 flex flex-col items-center"
         >
           <span className="mb-6 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.28em] text-foreground/55 shadow-[0_0_30px_rgba(168,85,247,0.12)]">
-            yHD AGENCY · Morocco
+            AGENCY · Morocco
           </span>
           <motion.h1
             className="font-heading text-[clamp(4.75rem,16vw,13.75rem)] font-normal leading-[1.02] tracking-[-0.024em]"

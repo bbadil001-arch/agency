@@ -10,7 +10,7 @@ export function Contact() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`New yHD AGENCY project inquiry from ${data.get('name')}`);
+    const subject = encodeURIComponent(`New AGENCY project inquiry from ${data.get('name')}`);
     const body = encodeURIComponent([
       `Name: ${data.get('name')}`,
       `Email: ${data.get('email')}`,
@@ -20,7 +20,7 @@ export function Contact() {
       String(data.get('message') ?? ''),
     ].join('\n'));
     setSubmitted(true);
-    window.location.href = `mailto:yh.help@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:yhpro.help@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -35,8 +35,8 @@ export function Contact() {
           />
 
           <div className="mt-10 space-y-5 text-sm text-foreground/60">
-            <a href="mailto:yh.help@gmail.com" className="flex items-center gap-3 transition hover:text-foreground">
-              <Mail aria-hidden="true" className="h-4 w-4 text-foreground/40" /> yh.help@gmail.com
+            <a href="mailto:yhpro.help@gmail.com" className="flex items-center gap-3 transition hover:text-foreground">
+              <Mail aria-hidden="true" className="h-4 w-4 text-foreground/40" /> yhpro.help@gmail.com
             </a>
             <a href="tel:+212643543460" className="flex items-center gap-3 transition hover:text-foreground">
               <Phone aria-hidden="true" className="h-4 w-4 text-foreground/40" /> +212 643 543 460
@@ -80,10 +80,10 @@ export function Contact() {
               Budget range
               <select required name="budget" defaultValue="" className="mt-2 w-full rounded-xl border border-white/10 bg-[#11091e] px-4 py-3 text-foreground outline-none transition focus:border-purple-300/60">
                 <option value="" disabled>Select a range</option>
-                <option>MAD 10k – 25k</option>
-                <option>MAD 25k – 50k</option>
-                <option>MAD 50k – 100k</option>
-                <option>MAD 100k+</option>
+                <option>$300 – $750</option>
+                <option>$750 – $1,500</option>
+                <option>$1,500 – $3,000</option>
+                <option>$3,000+</option>
               </select>
             </label>
           </div>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { StaticPage } from '@/components/StaticPage';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | yHD AGENCY',
-  description: 'Privacy policy for the yHD AGENCY website, including cookies, analytics, contact forms, and advertising services.',
+  title: 'Privacy Policy | AGENCY',
+  description: 'Privacy policy for the AGENCY website, including cookies, analytics, contact forms, and advertising services.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -12,8 +12,8 @@ export default function PrivacyPolicyPage() {
       <article className="mx-auto max-w-4xl px-5 py-24 sm:px-8 sm:py-32">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-purple-200/70">Legal / Privacy</p>
         <h1 className="mt-5 font-heading text-5xl tracking-[-0.05em] sm:text-7xl">Privacy Policy</h1>
-        <div className="prose-yhd mt-12">
-          <p>yHD AGENCY respects your privacy. This policy explains what information we collect when you use this website, why we use it, and the choices available to you.</p>
+        <div className="prose-agency mt-12">
+          <p>AGENCY respects your privacy. This policy explains what information we collect when you use this website, why we use it, and the choices available to you.</p>
           <h2>Information we collect</h2>
           <p>When you contact us, we may receive your name, email address, phone number, selected service, budget range, and message. We use this information only to respond to your request, discuss a project, and provide the services you ask for.</p>
           <h2>Cookies and analytics</h2>
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
           <h2>Third-party links</h2>
           <p>Our website may link to Behance, WhatsApp, social networks, advertising services, and other third-party websites. Their own privacy policies apply when you leave our website.</p>
           <h2>Your choices</h2>
-          <p>You may ask us to access, correct, or delete personal information you have sent to us. You may also control cookies through your browser settings. To contact us about privacy, email <a href="mailto:yh.help@gmail.com">yh.help@gmail.com</a>.</p>
+          <p>You may ask us to access, correct, or delete personal information you have sent to us. You may also control cookies through your browser settings. To contact us about privacy, email <a href="mailto:yhpro.help@gmail.com">yhpro.help@gmail.com</a>.</p>
           <h2>Updates</h2>
           <p>We may update this policy when the website, services, or legal requirements change. The latest version will always be published on this page.</p>
           <p>Last updated: September 2026.</p>

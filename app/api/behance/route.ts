@@ -61,11 +61,11 @@ function extractProjects(html: string): BehanceProject[] {
     const category = inferCategory(title);
     projects.push({
       title,
-      client: 'yHD AGENCY · Behance portfolio',
+      client: 'AGENCY · Behance portfolio',
       category,
       tags: ['Behance', category === 'Development' ? 'Digital product' : category],
       monogram: title.split(/\s+/).map((word) => word[0]).join('').slice(0, 2).toUpperCase(),
-      description: 'Fresh work from the yHD AGENCY Behance portfolio.',
+      description: 'Fresh work from the AGENCY Behance portfolio.',
       image,
       link,
     });
@@ -78,7 +78,7 @@ function extractProjects(html: string): BehanceProject[] {
 export async function GET() {
   try {
     const response = await fetch(PROFILE_URL, {
-      headers: { 'user-agent': 'yHD-AGENCY-portfolio-sync/1.0' },
+      headers: { 'user-agent': 'AGENCY-portfolio-sync/1.0' },
       cache: 'no-store',
     });
 

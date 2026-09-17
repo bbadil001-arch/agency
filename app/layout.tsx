@@ -4,7 +4,7 @@ import { LanguageProvider } from '@/components/i18n';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://power-ai-agency.bbadil001.chatgpt.site'),
-  title: 'yHD AGENCY | Digital design & development',
+  title: 'AGENCY | Digital design & development',
   description: 'Morocco-based creative studio for graphic design, digital experiences, and web development.',
   alternates: {
     languages: {

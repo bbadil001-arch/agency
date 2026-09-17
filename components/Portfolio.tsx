@@ -21,7 +21,7 @@ const filters: Category[] = ['All', 'Marketing', 'Design', 'Development'];
 const fallbackProjects: Project[] = [
   {
     title: 'Apply / Job Application UI',
-    client: 'yHD AGENCY · Product design',
+    client: 'AGENCY · Product design',
     category: 'Development',
     tags: ['UI / UX', 'Product design'],
     monogram: 'AP',
@@ -31,7 +31,7 @@ const fallbackProjects: Project[] = [
   },
   {
     title: 'Food & Restaurant App',
-    client: 'yHD AGENCY · Mobile experience',
+    client: 'AGENCY · Mobile experience',
     category: 'Development',
     tags: ['UI / UX', 'Mobile app'],
     monogram: 'FR',
@@ -41,7 +41,7 @@ const fallbackProjects: Project[] = [
   },
   {
     title: 'Music App UI',
-    client: 'yHD AGENCY · Digital product',
+    client: 'AGENCY · Digital product',
     category: 'Development',
     tags: ['Interface', 'Interaction'],
     monogram: 'MU',
@@ -124,7 +124,7 @@ export function Portfolio() {
             <SectionHeading
               eyebrow="03 / Selected work"
               title="Work with a point of view."
-              description="A selection of interface, identity, and campaign work from the yHD AGENCY studio."
+              description="A selection of interface, identity, and campaign work from the AGENCY studio."
             />
             <p className="mt-5 text-xs uppercase tracking-[0.16em] text-foreground/35" aria-live="polite">
               {syncState === 'synced' ? 'Live Behance sync · updated automatically' : syncState === 'syncing' ? 'Checking latest Behance work…' : 'Showing curated work · Behance sync unavailable'}

@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'paragraph', text: 'That foundation is especially valuable for a company targeting competitive searches such as “web development agency Casablanca” or “custom web development Morocco.” When the technical experience and the editorial strategy work together, your pages can answer a real question and make the next action obvious.' },
       { type: 'heading', level: 2, text: 'When should you choose custom web development?' },
       { type: 'paragraph', text: 'Choose a custom Next.js website when your business depends on speed, lead quality, content flexibility, or a distinct digital experience. WordPress can still be the right fit for a small publishing site with a simple workflow. The important decision is to match the platform to your growth model, not to choose the familiar option by default.' },
-      { type: 'paragraph', text: 'At yHD AGENCY, we design and build fast, conversion-focused digital experiences for ambitious businesses in Morocco and beyond. If your current website is slow, difficult to update, or not turning attention into conversations, let’s map the opportunity together.' },
+      { type: 'paragraph', text: 'At AGENCY, we design and build fast, conversion-focused digital experiences for ambitious businesses in Morocco and beyond. If your current website is slow, difficult to update, or not turning attention into conversations, let’s map the opportunity together.' },
     ],
   },
   {
@@ -76,7 +76,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'list', items: ['Give each campaign one primary call to action.', 'Reply quickly and use a consistent lead qualification process.', 'Record the source of every enquiry so budget follows real outcomes.', 'Review the funnel monthly and improve the largest point of drop-off.'] },
       { type: 'heading', level: 2, text: 'Build a system that compounds' },
       { type: 'paragraph', text: 'The best digital marketing strategy is not a collection of disconnected posts. It is a repeatable system where paid media creates demand, local SEO captures intent, content builds trust, and the funnel turns attention into action. Start with one audience and one clear offer, measure honestly, and expand once the fundamentals are working.' },
-      { type: 'paragraph', text: 'yHD AGENCY helps Moroccan businesses build that system through strategy, creative, performance campaigns, and conversion-focused web experiences. If you want a clearer path from visibility to qualified growth, get in touch and let’s plan the next move.' },
+      { type: 'paragraph', text: 'AGENCY helps Moroccan businesses build that system through strategy, creative, performance campaigns, and conversion-focused web experiences. If you want a clearer path from visibility to qualified growth, get in touch and let’s plan the next move.' },
     ],
   },
   {
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'list', items: ['Logo variations and clear usage rules.', 'A flexible type and color system with accessibility in mind.', 'Templates for social content, proposals, and key sales materials.', 'Art direction for imagery and motion.', 'Digital components that connect the brand to the website and product experience.'] },
       { type: 'heading', level: 2, text: 'Make your next impression count' },
       { type: 'paragraph', text: 'A visual identity should make the right customers feel that your business is for them. It should express the standard you want to be known for and make every future touchpoint easier to produce. Whether you are launching, repositioning, or growing into a more competitive category, the right design system can shift perception from “one option” to “the obvious choice.”' },
-      { type: 'paragraph', text: 'yHD AGENCY brings brand strategy, graphic design, and digital experience design together for businesses that want to look as capable as they are. If your current identity no longer matches your ambition, book a conversation and let’s give your next chapter a sharper visual language.' },
+      { type: 'paragraph', text: 'AGENCY brings brand strategy, graphic design, and digital experience design together for businesses that want to look as capable as they are. If your current identity no longer matches your ambition, book a conversation and let’s give your next chapter a sharper visual language.' },
     ],
   },
   {
@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'paragraph', text: 'Watch contribution margin after advertising, conversion rate by device, average order value, repeat purchase rate, and the cost of acquiring a customer who actually keeps the order. This gives a more useful picture than platform clicks alone. A Shopify developer Morocco businesses can rely on should be able to connect the storefront experience with the events your marketing team needs to make decisions.' },
       { type: 'heading', level: 2, text: 'Build a retention loop, not a one-time sale' },
       { type: 'paragraph', text: 'Growth becomes more efficient when customers return. Collect permission for useful follow-up, recommend products based on real behavior, and create post-purchase content that helps the customer get more value from what they bought. Reviews, referrals, bundles, and replenishment reminders can turn a first order into a relationship.' },
-      { type: 'paragraph', text: 'At yHD AGENCY, we combine e-commerce web development in Morocco, conversion design, content, and performance marketing into one growth system. If you want to scale an online store in Casablanca without losing control of the customer experience, let’s map the next stage together.' },
+      { type: 'paragraph', text: 'At AGENCY, we combine e-commerce web development in Morocco, conversion design, content, and performance marketing into one growth system. If you want to scale an online store in Casablanca without losing control of the customer experience, let’s map the next stage together.' },
     ],
   },
   {
@@ -171,7 +171,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'paragraph', text: 'When positioning and identity are clear, sales conversations improve. Prospects arrive with a better understanding of what you do, the team spends less time explaining basic differences, and proposals can focus on the customer’s decision instead of defending the brand’s credibility. A clear visual identity studio helps turn scattered expertise into a story people can quickly trust.' },
       { type: 'heading', level: 2, text: 'How to know it is time to rebrand' },
       { type: 'list', items: ['Your best work looks more advanced than your current presentation.', 'Different teams or channels use different versions of the brand.', 'You are attracting price shoppers instead of the clients you want.', 'Your business has evolved but your promise still sounds like the old version.', 'Your website gets attention but does not create enough qualified enquiries.'] },
-      { type: 'paragraph', text: 'yHD AGENCY is a branding agency in Casablanca for businesses ready to make their ambition visible. We combine strategy, luxury-minded graphic design, and digital experience thinking to create identities that feel distinctive and work hard. If your brand has outgrown its current image, let’s build a more valuable first impression.' },
+      { type: 'paragraph', text: 'AGENCY is a branding agency in Casablanca for businesses ready to make their ambition visible. We combine strategy, luxury-minded graphic design, and digital experience thinking to create identities that feel distinctive and work hard. If your brand has outgrown its current image, let’s build a more valuable first impression.' },
     ],
   },
   {
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'paragraph', text: 'Strong rankings are easier to sustain when reputable websites and partners recognize your work. Publish original case studies, collaborate with relevant Moroccan businesses, contribute practical insights, and make your best resources easy to reference. Avoid low-quality link packages that create noise without building trust.' },
       { type: 'heading', level: 2, text: 'Measure SEO by business outcomes' },
       { type: 'paragraph', text: 'Track impressions and rankings, but connect them to enquiries, qualified calls, WhatsApp conversations, and revenue where possible. A page that ranks for a smaller, more specific query can be more valuable than a broad page that attracts people who will never buy. Review the funnel monthly and improve pages based on what customers actually do.' },
-      { type: 'paragraph', text: 'yHD AGENCY helps Moroccan companies combine local SEO, content, conversion design, and fast web development into a practical search growth system. If you want stronger Google visibility in 2026, start with a clear audit and a focused plan for the searches that can change your business.' },
+      { type: 'paragraph', text: 'AGENCY helps Moroccan companies combine local SEO, content, conversion design, and fast web development into a practical search growth system. If you want stronger Google visibility in 2026, start with a clear audit and a focused plan for the searches that can change your business.' },
     ],
   },
 ];

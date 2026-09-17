@@ -33,7 +33,7 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-col justify-between gap-3 border-t border-white/[0.06] pt-6 text-xs text-foreground/35 sm:flex-row">
-          <p>© 2026 yHD AGENCY. Built in Morocco, made for anywhere.</p>
+          <p>© 2026 AGENCY. Built in Morocco, made for anywhere.</p>
           <p>Strategy · Design · Development</p>
         </div>
       </div>

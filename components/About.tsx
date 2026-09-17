@@ -11,7 +11,7 @@ export function About() {
           <SectionHeading eyebrow="02 / The studio" title="Local instinct. Global standard." />
           <div className="mt-8 space-y-5 text-base leading-8 text-foreground/60 sm:text-lg">
             <p>
-              yHD AGENCY is a Morocco-based creative studio for brands ready to move with intent. We bring strategic clarity, expressive design, and dependable engineering into the same room.
+              AGENCY is a Morocco-based creative studio for brands ready to move with intent. We bring strategic clarity, expressive design, and dependable engineering into the same room.
             </p>
             <p>
               Our roots keep us close to Morocco’s visual culture and entrepreneurial energy, while our process is built for the standards of the world’s most competitive digital teams.

@@ -105,18 +105,18 @@ a {
   will-change: transform;
 }
 
-.prose-yhd {
+.prose-agency {
   color: rgb(245 244 242 / 0.64);
   font-size: 1.0625rem;
   line-height: 1.9;
 }
 
-.prose-yhd p {
+.prose-agency p {
   margin: 0 0 1.7rem;
 }
 
-.prose-yhd h2,
-.prose-yhd h3 {
+.prose-agency h2,
+.prose-agency h3 {
   color: hsl(var(--foreground));
   font-family: var(--font-general-sans);
   font-weight: 500;
@@ -124,27 +124,27 @@ a {
   line-height: 1.2;
 }
 
-.prose-yhd h2 {
+.prose-agency h2 {
   margin: 3.5rem 0 1.1rem;
   font-size: clamp(1.8rem, 4vw, 2.55rem);
 }
 
-.prose-yhd h3 {
+.prose-agency h3 {
   margin: 2.4rem 0 0.9rem;
   font-size: 1.35rem;
 }
 
-.prose-yhd ul {
+.prose-agency ul {
   margin: 0 0 2rem;
   padding-left: 1.3rem;
 }
 
-.prose-yhd li {
+.prose-agency li {
   margin: 0.6rem 0;
   padding-left: 0.35rem;
 }
 
-.prose-yhd li::marker {
+.prose-agency li::marker {
   color: rgb(192 132 252 / 0.8);
 }
 

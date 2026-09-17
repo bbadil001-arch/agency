@@ -4,7 +4,7 @@ const metrics = [
   { value: '50+', label: 'Digital Projects Delivered', icon: Layers },
   { value: '98%', label: 'Client Satisfaction Rate', icon: Sparkles },
   { value: '3x', label: 'Average Revenue Boost', icon: TrendingUp },
-  { value: 'Casablanca', label: 'Morocco-Based Hub', icon: MapPin },
+  { value: 'Worldwide', label: 'Available Worldwide', icon: MapPin },
 ];
 
 export function Metrics() {

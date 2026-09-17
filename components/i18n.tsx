@@ -19,13 +19,13 @@ type CopyKey =
 
 const copy: Record<Locale, Record<CopyKey, string>> = {
   en: {
-    expertise: 'Expertise', about: 'About', work: 'Work', insights: 'Insights', contact: 'Contact', getInTouch: 'Get in Touch', language: 'Language', privacy: 'Privacy Policy', terms: 'Terms & Conditions', backHome: 'Back to yHD AGENCY', advertisement: 'Advertisement',
+    expertise: 'Expertise', about: 'About', work: 'Work', insights: 'Insights', contact: 'Contact', getInTouch: 'Get in Touch', language: 'Language', privacy: 'Privacy Policy', terms: 'Terms & Conditions', backHome: 'Back to AGENCY', advertisement: 'Advertisement',
   },
   ar: {
-    expertise: 'خدماتنا', about: 'من نحن', work: 'أعمالنا', insights: 'المقالات', contact: 'اتصل بنا', getInTouch: 'تواصل معنا', language: 'اللغة', privacy: 'سياسة الخصوصية', terms: 'الشروط والأحكام', backHome: 'العودة إلى yHD AGENCY', advertisement: 'إعلان',
+    expertise: 'خدماتنا', about: 'من نحن', work: 'أعمالنا', insights: 'المقالات', contact: 'اتصل بنا', getInTouch: 'تواصل معنا', language: 'اللغة', privacy: 'سياسة الخصوصية', terms: 'الشروط والأحكام', backHome: 'العودة إلى AGENCY', advertisement: 'إعلان',
   },
   fr: {
-    expertise: 'Expertise', about: 'À propos', work: 'Réalisations', insights: 'Insights', contact: 'Contact', getInTouch: 'Nous contacter', language: 'Langue', privacy: 'Politique de confidentialité', terms: 'Conditions', backHome: 'Retour à yHD AGENCY', advertisement: 'Publicité',
+    expertise: 'Expertise', about: 'À propos', work: 'Réalisations', insights: 'Insights', contact: 'Contact', getInTouch: 'Nous contacter', language: 'Langue', privacy: 'Politique de confidentialité', terms: 'Conditions', backHome: 'Retour à AGENCY', advertisement: 'Publicité',
   },
 };
 
@@ -50,7 +50,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get('lang') as Locale | null;
-    const stored = window.localStorage.getItem('yhd-locale') as Locale | null;
+    const stored = window.localStorage.getItem('agency-locale') as Locale | null;
     setLocaleState(requested === 'ar' || requested === 'fr' || requested === 'en'
       ? requested
       : stored === 'ar' || stored === 'fr' || stored === 'en'
@@ -68,7 +68,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<LocaleContextValue>(() => ({
     locale,
     setLocale: (nextLocale) => {
-      window.localStorage.setItem('yhd-locale', nextLocale);
+      window.localStorage.setItem('agency-locale', nextLocale);
       setLocaleState(nextLocale);
     },
     t: (key) => copy[locale][key],

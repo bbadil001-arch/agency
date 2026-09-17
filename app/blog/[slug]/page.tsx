@@ -16,10 +16,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  if (!post) return { title: 'Insight not found | yHD AGENCY' };
+  if (!post) return { title: 'Insight not found | AGENCY' };
 
   return {
-    title: `${post.title} | yHD AGENCY`,
+    title: `${post.title} | AGENCY`,
     description: post.excerpt,
     keywords: post.keywords,
     alternates: {
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-foreground/40">
             <span>{post.publishedAt}</span>
             <span>{post.readTime}</span>
-            <span>yHD AGENCY</span>
+            <span>AGENCY</span>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
             {post.keywords.map((keyword) => <span key={keyword} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-foreground/45">{keyword}</span>)}
@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
         <div className="mt-10"><AdPlaceholder /></div>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_240px] lg:items-start">
-          <article className="prose-yhd">
+          <article className="prose-agency">
             {post.blocks.map((block, index) => (
               <Fragment key={index}>
                 {block.type === 'paragraph' && <p>{block.text}</p>}
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
         <div className="liquid-glass mt-16 rounded-[28px] p-7 sm:p-10">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-purple-200/70">Build the next move</p>
           <h2 className="mt-4 max-w-2xl font-heading text-3xl tracking-[-0.04em] sm:text-4xl">Have a project in mind?</h2>
-          <p className="mt-4 max-w-xl text-base leading-7 text-foreground/55">Bring us the challenge. yHD AGENCY can help shape the strategy, identity, and digital experience that turns attention into action.</p>
+          <p className="mt-4 max-w-xl text-base leading-7 text-foreground/55">Bring us the challenge. AGENCY can help shape the strategy, identity, and digital experience that turns attention into action.</p>
           <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0b0610] transition hover:bg-white/90">
             Start a conversation <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </Link>
