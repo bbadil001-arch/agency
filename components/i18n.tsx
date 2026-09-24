@@ -30,9 +30,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get('lang');
     const stored = window.localStorage.getItem('agency-locale');
+    const routeMatch = window.location.pathname.match(/^\/(en|fr|ar)(?=\/|$)/)?.[1] ?? null;
+    const routeLocale = isLocale(routeMatch ?? '') ? (routeMatch as Locale) : undefined;
     const requestedLocale = isLocale(requested ?? '') ? (requested as Locale) : undefined;
     const storedLocale = isLocale(stored ?? '') ? (stored as Locale) : undefined;
-    setLocaleState(requestedLocale ?? storedLocale ?? detectLocale());
+    setLocaleState(routeLocale ?? requestedLocale ?? storedLocale ?? detectLocale());
   }, []);
 
   useEffect(() => {
