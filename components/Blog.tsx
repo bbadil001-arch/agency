@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
 import { getLocalizedBlogPosts } from '@/lib/blog-catalog';
 import { SectionHeading } from '@/components/section-heading';
@@ -8,9 +9,10 @@ import { useLocale } from '@/components/i18n';
 
 export function Blog({ limit }: { limit?: number }) {
   const { copy, locale } = useLocale();
+  const pathname = usePathname();
   const localizedPosts = getLocalizedBlogPosts(locale);
   const posts = limit ? localizedPosts.slice(-limit) : localizedPosts;
-  const blogPrefix = locale === 'en' ? '' : `/${locale}`;
+  const blogPrefix = /^\/(en|fr|ar)(?=\/|$)/.test(pathname) ? `/${locale}` : '';
 
   return (
     <section id="insights" className="relative border-y border-white/[0.06] px-5 py-24 sm:px-8 sm:py-32">
