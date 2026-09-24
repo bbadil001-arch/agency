@@ -56,6 +56,8 @@ export const dictionaries = {
       paragraphOne: 'AGENCY is a Morocco-based creative studio for brands ready to move with intent. We bring strategic clarity, expressive design, and dependable engineering into the same room.',
       paragraphTwo: 'Our roots keep us close to Morocco’s visual culture and entrepreneurial energy, while our process is built for the standards of the world’s most competitive digital teams.',
     },
+    metrics: { projects: 'Digital Projects Delivered', satisfaction: 'Client Satisfaction Rate', revenue: 'Average Revenue Boost', worldwide: 'Available Worldwide' },
+    marquee: { firstLine: 'Powered by World-Class', secondLine: 'Tech & Media Platforms' },
     portfolio: { syncLive: 'Live Behance sync · updated automatically', syncChecking: 'Checking latest Behance work…', syncFallback: 'Showing curated work · Behance sync unavailable', viewBehance: 'View on Behance' },
     testimonials: { quoteOne: 'Power AI gave our launch the clarity it was missing. The new story travelled from Casablanca to Paris without losing its soul.', quoteTwo: 'They are rare in that they can talk acquisition numbers in the morning and obsess over a single pixel in the afternoon.', quoteThree: 'Our website finally feels like the quality of the work we do. The process was direct, thoughtful, and genuinely enjoyable.' },
     contact: {
@@ -144,6 +146,8 @@ export const dictionaries = {
       paragraphOne: 'AGENCY est un studio créatif basé au Maroc pour les marques qui veulent avancer avec intention. Nous réunissons clarté stratégique, design expressif et ingénierie fiable.',
       paragraphTwo: 'Nos racines nous rapprochent de la culture visuelle et de l’énergie entrepreneuriale du Maroc, tandis que notre méthode répond aux standards des équipes digitales les plus exigeantes.',
     },
+    metrics: { projects: 'Projets digitaux livrés', satisfaction: 'Taux de satisfaction client', revenue: 'Hausse moyenne du chiffre d’affaires', worldwide: 'Disponible partout dans le monde' },
+    marquee: { firstLine: 'Propulsé par des plateformes', secondLine: 'tech & médias de référence' },
     portfolio: { syncLive: 'Synchronisation Behance active · mise à jour automatique', syncChecking: 'Recherche des derniers projets Behance…', syncFallback: 'Projets sélectionnés · synchronisation Behance indisponible', viewBehance: 'Voir sur Behance' },
     testimonials: { quoteOne: 'AGENCY a donné à notre lancement la clarté qui lui manquait. Notre histoire est allée de Casablanca à Paris sans perdre son âme.', quoteTwo: 'Ils savent parler acquisition le matin et peaufiner un pixel l’après-midi. Cette double exigence est rare.', quoteThree: 'Notre site reflète enfin la qualité de notre travail. Le processus était direct, réfléchi et vraiment agréable.' },
     contact: {
@@ -232,6 +236,8 @@ export const dictionaries = {
       paragraphOne: 'AGENCY استوديو إبداعي مقره المغرب للعلامات التي تريد التقدم بوعي. نجمع بين الوضوح الاستراتيجي والتصميم التعبيري والهندسة الموثوقة في فريق واحد.',
       paragraphTwo: 'جذورنا قريبة من الثقافة البصرية والطاقة الريادية في المغرب، بينما تعتمد طريقتنا على معايير أفضل الفرق الرقمية حول العالم.',
     },
+    metrics: { projects: 'مشروع رقمي تم إنجازه', satisfaction: 'نسبة رضا العملاء', revenue: 'متوسط نمو الإيرادات', worldwide: 'متاحون حول العالم' },
+    marquee: { firstLine: 'مدعوم بأفضل منصات', secondLine: 'التقنية والإعلام العالمية' },
     portfolio: { syncLive: 'مزامنة Behance مباشرة · تحديث تلقائي', syncChecking: 'جاري فحص أحدث أعمال Behance…', syncFallback: 'أعمال مختارة · مزامنة Behance غير متاحة', viewBehance: 'شاهد على Behance' },
     testimonials: { quoteOne: 'منحتنا AGENCY الوضوح الذي كان ينقص إطلاقنا. انتقلت قصتنا من الدار البيضاء إلى باريس من دون أن تفقد روحها.', quoteTwo: 'من النادر أن تجد فريقاً يتحدث عن أرقام الاستحواذ صباحاً ويدقق في بكسل واحد بعد الظهر.', quoteThree: 'أصبح موقعنا يعكس جودة عملنا فعلاً. كانت العملية مباشرة ومدروسة وممتعة.' },
     contact: {

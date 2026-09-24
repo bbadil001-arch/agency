@@ -1,13 +1,14 @@
 import { Layers, MapPin, Sparkles, TrendingUp } from 'lucide-react';
-
-const metrics = [
-  { value: '50+', label: 'Digital Projects Delivered', icon: Layers },
-  { value: '98%', label: 'Client Satisfaction Rate', icon: Sparkles },
-  { value: '3x', label: 'Average Revenue Boost', icon: TrendingUp },
-  { value: 'Worldwide', label: 'Available Worldwide', icon: MapPin },
-];
+import { useLocale } from '@/components/i18n';
 
 export function Metrics() {
+  const { copy } = useLocale();
+  const metrics = [
+    { value: '50+', label: copy.metrics.projects, icon: Layers },
+    { value: '98%', label: copy.metrics.satisfaction, icon: Sparkles },
+    { value: '3x', label: copy.metrics.revenue, icon: TrendingUp },
+    { value: 'Worldwide', label: copy.metrics.worldwide, icon: MapPin },
+  ];
   return (
     <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-4">
       {metrics.map((metric) => {

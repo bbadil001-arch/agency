@@ -1,4 +1,5 @@
 const brands = ['Shopify', 'WordPress', 'Meta', 'Google Partner', 'HubSpot', 'Webflow'];
+import { useLocale } from '@/components/i18n';
 
 function BrandItem({ name }: { name: string }) {
   return (
@@ -12,6 +13,7 @@ function BrandItem({ name }: { name: string }) {
 }
 
 export function HeroMarquee() {
+  const { copy } = useLocale();
   const loop = [...brands, ...brands];
 
   return (
@@ -20,9 +22,9 @@ export function HeroMarquee() {
       aria-label="Platforms and partners"
     >
       <p className="w-full shrink-0 text-sm leading-5 text-foreground/50 md:w-[165px]">
-        Powered by World-Class
+        {copy.marquee.firstLine}
         <br />
-        Tech &amp; Media Platforms
+        {copy.marquee.secondLine}
       </p>
 
       <div className="min-w-0 w-full flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">

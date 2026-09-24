@@ -6,7 +6,7 @@ import { Metrics } from '@/components/Metrics';
 import { useLocale } from '@/components/i18n';
 
 export function About() {
-  const { copy } = useLocale();
+  const { copy, locale } = useLocale();
   return (
     <section id="about" className="relative border-y border-white/[0.06] px-5 py-24 sm:px-8 sm:py-32">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-[120px]" />
@@ -21,7 +21,7 @@ export function About() {
               {copy.about.paragraphTwo}
             </p>
           </div>
-          <a href="/contact" className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
+          <a href={`/${locale}/contact`} className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
             {copy.sections.meetTeam} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </a>
         </div>
