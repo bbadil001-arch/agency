@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
+import { useLocale } from '@/components/i18n';
 
 type Category = 'All' | 'Marketing' | 'Design' | 'Development';
 export type Project = {
@@ -82,6 +83,7 @@ const fallbackProjects: Project[] = [
 ];
 
 export function Portfolio() {
+  const { copy } = useLocale();
   const [activeFilter, setActiveFilter] = useState<Category>('All');
   const [projects, setProjects] = useState<Project[]>(fallbackProjects);
   const [syncState, setSyncState] = useState<'syncing' | 'synced' | 'fallback'>('syncing');
@@ -122,12 +124,12 @@ export function Portfolio() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionHeading
-              eyebrow="03 / Selected work"
-              title="Work with a point of view."
-              description="A selection of interface, identity, and campaign work from the AGENCY studio."
+              eyebrow={copy.sections.selectedWork}
+              title={copy.sections.selectedWorkTitle}
+              description={copy.sections.selectedWorkDescription}
             />
             <p className="mt-5 text-xs uppercase tracking-[0.16em] text-foreground/35" aria-live="polite">
-              {syncState === 'synced' ? 'Live Behance sync · updated automatically' : syncState === 'syncing' ? 'Checking latest Behance work…' : 'Showing curated work · Behance sync unavailable'}
+              {syncState === 'synced' ? copy.portfolio.syncLive : syncState === 'syncing' ? copy.portfolio.syncChecking : copy.portfolio.syncFallback}
             </p>
           </div>
           <div className="flex flex-wrap gap-2" aria-label="Filter case studies">
@@ -190,7 +192,7 @@ export function Portfolio() {
                   </div>
                 </div>
                 <a href={project.link} target="_blank" rel="noreferrer" className="mt-1 shrink-0 text-sm font-medium text-foreground transition hover:text-purple-200">
-                  View on Behance <span aria-hidden="true">↗</span>
+                  {copy.portfolio.viewBehance} <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </motion.article>

@@ -139,6 +139,17 @@ a {
   padding-left: 1.3rem;
 }
 
+html[dir='rtl'] .prose-agency ul {
+  padding-left: 0;
+  padding-right: 1.3rem;
+}
+
+html[dir='rtl'] .prose-agency h2,
+html[dir='rtl'] .prose-agency h3 {
+  font-family: var(--font-katibeh), var(--font-general-sans);
+  letter-spacing: 0;
+}
+
 .prose-agency li {
   margin: 0.6rem 0;
   padding-left: 0.35rem;

@@ -1,5 +1,8 @@
+'use client';
+
 import { Quote, Star } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
+import { useLocale } from '@/components/i18n';
 
 const testimonials = [
   {
@@ -23,18 +26,24 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const { copy } = useLocale();
+  const localizedTestimonials = [
+    { ...testimonials[0], quote: copy.testimonials.quoteOne },
+    { ...testimonials[1], quote: copy.testimonials.quoteTwo },
+    { ...testimonials[2], quote: copy.testimonials.quoteThree },
+  ];
   return (
     <section className="border-y border-white/[0.06] px-5 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="04 / Client perspective"
-          title="Good work travels."
-          description="The best proof is what clients say after the launch day is over."
+          eyebrow={copy.sections.clientPerspective}
+          title={copy.sections.clientTitle}
+          description={copy.sections.clientDescription}
           align="center"
         />
 
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
+          {localizedTestimonials.map((testimonial) => (
             <article key={testimonial.name} className="liquid-glass rounded-[26px] p-7 sm:p-8">
               <div className="flex items-center justify-between">
                 <Quote aria-hidden="true" className="h-6 w-6 text-purple-300/70" strokeWidth={1.5} />

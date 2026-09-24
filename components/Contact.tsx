@@ -3,9 +3,11 @@
 import { FormEvent, useState } from 'react';
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
+import { useLocale } from '@/components/i18n';
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const { copy } = useLocale();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -29,20 +31,20 @@ export function Contact() {
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
         <div>
           <SectionHeading
-            eyebrow="05 / Start a conversation"
-            title="Have a good problem? Let’s make it useful."
-            description="Tell us where you want to go. We’ll come back with the clearest next step, not a generic pitch."
+            eyebrow={copy.contact.eyebrow}
+            title={copy.contact.title}
+            description={copy.contact.description}
           />
 
           <div className="mt-10 space-y-5 text-sm text-foreground/60">
-            <a href="mailto:yhpro.help@gmail.com" className="flex items-center gap-3 transition hover:text-foreground">
-              <Mail aria-hidden="true" className="h-4 w-4 text-foreground/40" /> yhpro.help@gmail.com
+            <a href={`mailto:${copy.contact.email}`} className="flex items-center gap-3 transition hover:text-foreground">
+              <Mail aria-hidden="true" className="h-4 w-4 text-foreground/40" /> {copy.contact.email}
             </a>
             <a href="tel:+212643543460" className="flex items-center gap-3 transition hover:text-foreground">
               <Phone aria-hidden="true" className="h-4 w-4 text-foreground/40" /> +212 643 543 460
             </a>
             <span className="flex items-center gap-3">
-              <MapPin aria-hidden="true" className="h-4 w-4 text-foreground/40" /> Morocco · Available worldwide
+              <MapPin aria-hidden="true" className="h-4 w-4 text-foreground/40" /> {copy.contact.location}
             </span>
           </div>
 
@@ -52,24 +54,24 @@ export function Contact() {
             rel="noreferrer"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
           >
-            <MessageCircle aria-hidden="true" className="h-4 w-4" /> Direct WhatsApp Chat <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+            <MessageCircle aria-hidden="true" className="h-4 w-4" /> {copy.contact.whatsapp} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </a>
         </div>
 
         <form onSubmit={handleSubmit} className="liquid-glass rounded-[28px] p-6 sm:p-8">
           <div className="grid gap-6 sm:grid-cols-2">
             <label className="text-sm text-foreground/55">
-              Name
-              <input required name="name" type="text" placeholder="Your name" className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-foreground outline-none transition placeholder:text-foreground/25 focus:border-purple-300/60 focus:bg-white/[0.07]" />
+              {copy.contact.name}
+              <input required name="name" type="text" placeholder={copy.contact.namePlaceholder} className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-foreground outline-none transition placeholder:text-foreground/25 focus:border-purple-300/60 focus:bg-white/[0.07]" />
             </label>
             <label className="text-sm text-foreground/55">
-              Email
-              <input required name="email" type="email" placeholder="you@company.com" className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-foreground outline-none transition placeholder:text-foreground/25 focus:border-purple-300/60 focus:bg-white/[0.07]" />
+              {copy.contact.emailLabel}
+              <input required name="email" type="email" placeholder={copy.contact.emailPlaceholder} className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-foreground outline-none transition placeholder:text-foreground/25 focus:border-purple-300/60 focus:bg-white/[0.07]" />
             </label>
             <label className="text-sm text-foreground/55">
-              Service needed
+              {copy.contact.service}
               <select required name="service" defaultValue="" className="mt-2 w-full rounded-xl border border-white/10 bg-[#11091e] px-4 py-3 text-foreground outline-none transition focus:border-purple-300/60">
-                <option value="" disabled>Select a service</option>
+                <option value="" disabled>{copy.contact.servicePlaceholder}</option>
                 <option>Digital Marketing</option>
                 <option>Graphic Design</option>
                 <option>Web Development</option>
@@ -77,9 +79,9 @@ export function Contact() {
               </select>
             </label>
             <label className="text-sm text-foreground/55">
-              Budget range
+              {copy.contact.budget}
               <select required name="budget" defaultValue="" className="mt-2 w-full rounded-xl border border-white/10 bg-[#11091e] px-4 py-3 text-foreground outline-none transition focus:border-purple-300/60">
-                <option value="" disabled>Select a range</option>
+                <option value="" disabled>{copy.contact.budgetPlaceholder}</option>
                 <option>$300 – $750</option>
                 <option>$750 – $1,500</option>
                 <option>$1,500 – $3,000</option>
@@ -88,13 +90,13 @@ export function Contact() {
             </label>
           </div>
           <label className="mt-6 block text-sm text-foreground/55">
-            Message
-            <textarea required name="message" rows={5} placeholder="What are you building, changing, or trying to unlock?" className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-foreground outline-none transition placeholder:text-foreground/25 focus:border-purple-300/60 focus:bg-white/[0.07]" />
+            {copy.contact.message}
+            <textarea required name="message" rows={5} placeholder={copy.contact.messagePlaceholder} className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-foreground outline-none transition placeholder:text-foreground/25 focus:border-purple-300/60 focus:bg-white/[0.07]" />
           </label>
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs leading-5 text-foreground/35">We usually reply within one business day.</p>
+            <p className="text-xs leading-5 text-foreground/35">{copy.contact.replyTime}</p>
             <button type="submit" className="rounded-full bg-white px-6 py-3 text-sm font-medium text-[#0b0610] transition hover:bg-white/90">
-              {submitted ? 'Opening your email…' : 'Send inquiry'} <span aria-hidden="true">↗</span>
+              {submitted ? copy.contact.opening : copy.contact.send} <span aria-hidden="true">↗</span>
             </button>
           </div>
         </form>

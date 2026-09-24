@@ -19,6 +19,7 @@ import {
   WandSparkles,
 } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
+import { useLocale } from '@/components/i18n';
 
 type ServiceItem = { label: string; icon: LucideIcon };
 type Service = {
@@ -73,17 +74,23 @@ const services: Service[] = [
 ];
 
 export function Services() {
+  const { copy } = useLocale();
+  const localizedServices: Service[] = [
+    { ...services[0], title: copy.services.marketing, description: copy.services.marketingDescription, items: [{ label: copy.services.seo, icon: Search }, { label: copy.services.ads, icon: BadgeDollarSign }, { label: copy.services.social, icon: Share2 }, { label: copy.services.content, icon: BarChart3 }] },
+    { ...services[1], title: copy.services.design, description: copy.services.designDescription, items: [{ label: copy.services.identity, icon: Sparkles }, { label: copy.services.logo, icon: PenTool }, { label: copy.services.uiux, icon: LayoutTemplate }, { label: copy.services.motion, icon: WandSparkles }] },
+    { ...services[2], title: copy.services.development, description: copy.services.developmentDescription, items: [{ label: copy.services.next, icon: Globe2 }, { label: copy.services.ecommerce, icon: ShoppingCart }, { label: copy.services.apps, icon: Code2 }, { label: copy.services.optimization, icon: Gauge }] },
+  ];
   return (
     <section id="services" className="relative px-5 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="01 / Capabilities"
-          title="Our Expertise"
-          description="One senior team for the moments that shape how your brand is found, understood, and chosen."
+          eyebrow={copy.sections.capabilities}
+          title={copy.sections.expertiseTitle}
+          description={copy.sections.expertiseDescription}
         />
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {services.map((service, index) => {
+          {localizedServices.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.article

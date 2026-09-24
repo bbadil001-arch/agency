@@ -1,38 +1,17 @@
 'use client';
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { dictionaries, type Dictionary, type Locale, isLocale } from '@/lib/i18n';
 
-export type Locale = 'en' | 'ar' | 'fr';
+export type { Locale } from '@/lib/i18n';
 
-type CopyKey =
-  | 'expertise'
-  | 'about'
-  | 'work'
-  | 'insights'
-  | 'contact'
-  | 'getInTouch'
-  | 'language'
-  | 'privacy'
-  | 'terms'
-  | 'backHome'
-  | 'advertisement';
-
-const copy: Record<Locale, Record<CopyKey, string>> = {
-  en: {
-    expertise: 'Expertise', about: 'About', work: 'Work', insights: 'Insights', contact: 'Contact', getInTouch: 'Get in Touch', language: 'Language', privacy: 'Privacy Policy', terms: 'Terms & Conditions', backHome: 'Back to AGENCY', advertisement: 'Advertisement',
-  },
-  ar: {
-    expertise: 'خدماتنا', about: 'من نحن', work: 'أعمالنا', insights: 'المقالات', contact: 'اتصل بنا', getInTouch: 'تواصل معنا', language: 'اللغة', privacy: 'سياسة الخصوصية', terms: 'الشروط والأحكام', backHome: 'العودة إلى AGENCY', advertisement: 'إعلان',
-  },
-  fr: {
-    expertise: 'Expertise', about: 'À propos', work: 'Réalisations', insights: 'Insights', contact: 'Contact', getInTouch: 'Nous contacter', language: 'Langue', privacy: 'Politique de confidentialité', terms: 'Conditions', backHome: 'Retour à AGENCY', advertisement: 'Publicité',
-  },
-};
+type CopyKey = keyof Dictionary['nav'] | 'privacy' | 'terms' | 'backHome' | 'advertisement';
 
 type LocaleContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: (key: CopyKey) => string;
+  copy: Dictionary;
 };
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
@@ -49,13 +28,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('en');
 
   useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get('lang') as Locale | null;
-    const stored = window.localStorage.getItem('agency-locale') as Locale | null;
-    setLocaleState(requested === 'ar' || requested === 'fr' || requested === 'en'
-      ? requested
-      : stored === 'ar' || stored === 'fr' || stored === 'en'
-        ? stored
-        : detectLocale());
+    const requested = new URLSearchParams(window.location.search).get('lang');
+    const stored = window.localStorage.getItem('agency-locale');
+    const requestedLocale = isLocale(requested ?? '') ? (requested as Locale) : undefined;
+    const storedLocale = isLocale(stored ?? '') ? (stored as Locale) : undefined;
+    setLocaleState(requestedLocale ?? storedLocale ?? detectLocale());
   }, []);
 
   useEffect(() => {
@@ -71,7 +48,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       window.localStorage.setItem('agency-locale', nextLocale);
       setLocaleState(nextLocale);
     },
-    t: (key) => copy[locale][key],
+    t: (key) => {
+      if (key === 'privacy') return dictionaries[locale].footer.privacy;
+      if (key === 'terms') return dictionaries[locale].footer.terms;
+      if (key === 'backHome') return dictionaries[locale].legal.backHome;
+      if (key === 'advertisement') return dictionaries[locale].blog.advertisement;
+      return dictionaries[locale].nav[key];
+    },
+    copy: dictionaries[locale],
   }), [locale]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;

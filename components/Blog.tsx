@@ -1,10 +1,16 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
-import { blogPosts } from '@/lib/blog-posts';
+import { getLocalizedBlogPosts } from '@/lib/blog-catalog';
 import { SectionHeading } from '@/components/section-heading';
+import { useLocale } from '@/components/i18n';
 
 export function Blog({ limit }: { limit?: number }) {
-  const posts = limit ? blogPosts.slice(-limit) : blogPosts;
+  const { copy, locale } = useLocale();
+  const localizedPosts = getLocalizedBlogPosts(locale);
+  const posts = limit ? localizedPosts.slice(-limit) : localizedPosts;
+  const blogPrefix = locale === 'en' ? '' : `/${locale}`;
 
   return (
     <section id="insights" className="relative border-y border-white/[0.06] px-5 py-24 sm:px-8 sm:py-32">
@@ -12,12 +18,12 @@ export function Blog({ limit }: { limit?: number }) {
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
-            eyebrow="06 / Insights"
-            title="Useful ideas for your next move."
-            description="Practical thinking on digital growth, web development, and brand design for ambitious businesses in Morocco."
+            eyebrow={copy.sections.insights}
+            title={copy.sections.insightsTitle}
+            description={copy.sections.insightsDescription}
           />
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
-            Explore all insights <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+          <Link href={`${blogPrefix}/blog`} className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
+            {copy.sections.exploreInsights} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </div>
 
@@ -31,8 +37,8 @@ export function Blog({ limit }: { limit?: number }) {
               <p className="mt-9 text-xs font-medium uppercase tracking-[0.16em] text-purple-200/70">{post.category}</p>
               <h3 className="mt-3 font-heading text-2xl font-medium leading-tight tracking-[-0.04em] text-foreground">{post.title}</h3>
               <p className="mt-5 flex-1 text-sm leading-6 text-foreground/55">{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground transition group-hover:text-purple-200">
-                Read the insight <ArrowUpRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <Link href={`${blogPrefix}/blog/${post.slug}`} className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground transition group-hover:text-purple-200">
+                {copy.blog.read} <ArrowUpRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </article>
           ))}
