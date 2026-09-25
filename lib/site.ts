@@ -1,9 +1,8 @@
 import { locales, type Locale } from '@/lib/i18n';
 
-// Set NEXT_PUBLIC_SITE_URL in Vercel/GitHub Pages to the real public domain.
-// The fallback keeps the current Sites deployment indexable until a custom
-// domain is configured.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://power-ai-agency.bbadil001.chatgpt.site').replace(/\/$/, '');
+// Set NEXT_PUBLIC_SITE_URL in the hosting environment if the public domain
+// changes. The production domain is used as the safe default for SEO URLs.
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://yhdagency.com').replace(/\/$/, '');
 
 export function absoluteUrl(path = '/') {
   return new URL(path.startsWith('/') ? path : `/${path}`, SITE_URL).toString();
