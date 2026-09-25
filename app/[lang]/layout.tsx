@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { LocaleRouteSync } from '@/components/LocaleRouteSync';
+import { StructuredData } from '@/components/StructuredData';
 import { directionForLocale, isLocale, locales, type Locale } from '@/lib/i18n';
 
 type LocaleLayoutProps = { children: React.ReactNode; params: Promise<{ lang: string }> };
@@ -26,6 +27,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <div lang={locale} dir={directionForLocale(locale)} data-locale={locale} className="min-h-screen">
       <LocaleRouteSync locale={locale} />
+      <StructuredData locale={locale} />
       {children}
     </div>
   );
