@@ -27,8 +27,8 @@ export function HeroMarquee() {
         {copy.marquee.secondLine}
       </p>
 
-      <div className="min-w-0 w-full flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
-        <div className="flex w-max whitespace-nowrap animate-marquee gap-10 pr-10 md:gap-16 md:pr-16">
+      <div className="min-w-0 w-full max-w-full flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
+        <div className="flex w-max flex-nowrap whitespace-nowrap animate-marquee gap-10 pr-10 md:gap-16 md:pr-16">
           {loop.map((brand, index) => (
             <BrandItem key={`${brand}-${index}`} name={brand} />
           ))}

@@ -102,6 +102,7 @@ a {
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+  animation-play-state: running;
   will-change: transform;
 }
 
@@ -167,5 +168,10 @@ html[dir='rtl'] .prose-agency h3 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+    transform: translateX(0) !important;
   }
 }
