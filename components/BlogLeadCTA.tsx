@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ArrowUpRight, MessageCircle } from 'lucide-react';
 import type { Locale } from '@/lib/i18n';
 import { getDictionary } from '@/lib/i18n';
@@ -24,9 +23,9 @@ export function BlogLeadCTA({ locale, title, slug }: { locale: Locale; title: st
         <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500">
           <MessageCircle aria-hidden="true" className="h-4 w-4" /> {copy.whatsapp} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
         </a>
-        <Link href={contactHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0b0610] transition hover:bg-white/90">
+        <a href={contactHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0b0610] transition hover:bg-white/90">
           {copy.quote} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-        </Link>
+        </a>
       </div>
     </aside>
   );

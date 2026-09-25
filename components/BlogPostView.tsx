@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getLocalizedBlogPost } from '@/lib/blog-catalog';
@@ -16,9 +15,9 @@ export function BlogPostView({ locale, slug }: { locale: Locale; slug: string })
   return (
     <StaticPage>
       <div className="mx-auto max-w-4xl px-5 pb-16 pt-8 sm:px-8 sm:pt-12">
-        <Link href={`/${locale}/blog`} className="inline-flex items-center gap-2 text-sm text-foreground/55 transition hover:text-foreground">
+        <a href={`/${locale}/blog`} className="inline-flex items-center gap-2 text-sm text-foreground/55 transition hover:text-foreground">
           <ArrowLeft aria-hidden="true" className="h-4 w-4 rtl:rotate-180" /> {copy.all}
-        </Link>
+        </a>
 
         <header className="mt-16 border-b border-white/[0.08] pb-12">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-purple-200/70">{post.category}</p>

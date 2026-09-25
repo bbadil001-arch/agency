@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
 import { getLocalizedBlogPosts } from '@/lib/blog-catalog';
@@ -27,14 +26,14 @@ export function Blog({ limit, routeLocale }: { limit?: number; routeLocale?: Loc
             title={copy.sections.insightsTitle}
             description={copy.sections.insightsDescription}
           />
-          <Link href={`${blogPrefix}/blog`} className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
+          <a href={`${blogPrefix}/blog`} className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-purple-200">
             {copy.sections.exploreInsights} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {posts.map((post, index) => (
-            <Link
+            <a
               key={post.slug}
               href={`${blogPrefix}/blog/${post.slug}`}
               className="group liquid-glass flex h-full flex-col rounded-[26px] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_42px_rgba(168,85,247,0.16)] sm:p-7"
@@ -49,7 +48,7 @@ export function Blog({ limit, routeLocale }: { limit?: number; routeLocale?: Loc
               <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground transition group-hover:text-purple-200">
                 {copy.blog.read} <ArrowUpRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
