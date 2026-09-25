@@ -23,7 +23,7 @@ export function Navbar() {
   const hrefFor = (path: string) => path.startsWith('#') ? `${prefix || ''}/${path}`.replace('//', '/') : `${prefix}${path}` || path;
 
   return (
-    <header className="sticky top-0 z-50 bg-[hsl(260,87%,3%)]/80 px-5 pt-5 backdrop-blur-xl sm:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 bg-[hsl(260,87%,3%)]/80 px-5 pt-5 backdrop-blur-xl supports-[backdrop-filter]:bg-[hsl(260,87%,3%)]/65 sm:px-8">
       <nav className="relative flex w-full items-center justify-between gap-4" aria-label="Main navigation">
         <BrandLogo />
 
@@ -52,7 +52,7 @@ export function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="liquid-glass absolute left-0 right-0 top-[calc(100%+14px)] rounded-[22px] p-4 md:hidden">
+          <div className="liquid-glass absolute left-0 right-0 top-[calc(100%+14px)] z-[60] max-h-[calc(100vh-6rem)] overflow-y-auto rounded-[22px] p-4 md:hidden">
             <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <a key={item.key} href={hrefFor(item.path)} onClick={() => setIsOpen(false)} className="rounded-xl px-4 py-3 text-sm text-foreground/80 transition hover:bg-white/[0.05] hover:text-foreground">

@@ -3,7 +3,7 @@ import { Footer } from '@/components/Footer';
 
 export function StaticPage({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
+    <main className="min-h-screen bg-[hsl(260,87%,3%)] pt-24 text-[hsl(40,6%,95%)]">
       <Navbar />
       {children}
       <Footer />

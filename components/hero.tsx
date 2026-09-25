@@ -9,8 +9,10 @@ import { useLocale } from '@/components/i18n';
 export function Hero() {
   const { copy } = useLocale();
   return (
-    <section id="top" className="relative flex min-h-screen flex-col overflow-visible bg-[hsl(260,87%,3%)] text-[hsl(40,6%,95%)]">
+    <section id="top" className="relative flex min-h-screen flex-col overflow-visible bg-[hsl(260,87%,3%)] pt-24 text-[hsl(40,6%,95%)]">
       <VideoBackground />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-48 bg-gradient-to-b from-black/80 via-black/30 to-transparent" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-56 bg-gradient-to-b from-transparent via-black/50 to-[hsl(260,87%,3%)]" aria-hidden="true" />
 
       <Navbar />
 

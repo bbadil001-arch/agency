@@ -21,13 +21,21 @@ export function VideoBackground() {
       video.style.opacity = String(Math.max(0, Math.min(1, value)));
     };
 
+    const scheduleRestart = () => {
+      window.clearTimeout(restartTimeout);
+      setOpacity(0);
+      restartTimeout = window.setTimeout(playFromStart, 100);
+    };
+
     const playFromStart = () => {
       window.clearTimeout(restartTimeout);
       video.currentTime = 0;
       setOpacity(0);
       startedAt = performance.now();
       hasStarted = true;
-      void video.play().catch(() => undefined);
+      void video.play().catch(() => {
+        if (document.visibilityState === 'visible') scheduleRestart();
+      });
     };
 
     const animate = () => {
@@ -43,9 +51,7 @@ export function VideoBackground() {
         setOpacity(Math.min(fadeIn, fadeOut));
 
         if (Number.isFinite(duration) && duration > 0 && currentTime >= duration - 0.04) {
-          setOpacity(0);
-          window.clearTimeout(restartTimeout);
-          restartTimeout = window.setTimeout(playFromStart, 100);
+          scheduleRestart();
         }
       }
 
@@ -53,13 +59,23 @@ export function VideoBackground() {
     };
 
     const handleLoaded = () => playFromStart();
+    const handleEnded = () => scheduleRestart();
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && hasStarted && video.paused) {
+        void video.play().catch(() => scheduleRestart());
+      }
+    };
     video.addEventListener('loadedmetadata', handleLoaded);
+    video.addEventListener('ended', handleEnded);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     frameId = window.requestAnimationFrame(animate);
 
     if (video.readyState >= 1) playFromStart();
 
     return () => {
       video.removeEventListener('loadedmetadata', handleLoaded);
+      video.removeEventListener('ended', handleEnded);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.cancelAnimationFrame(frameId);
       window.clearTimeout(restartTimeout);
     };
